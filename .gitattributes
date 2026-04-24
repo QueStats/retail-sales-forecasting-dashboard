@@ -5,3 +5,5 @@
 
 # Force SQL detection
 *.sql linguist-language=SQL
+*.sql linguist-detectable=true
+
