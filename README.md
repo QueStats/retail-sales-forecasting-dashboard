@@ -5,6 +5,8 @@
 ## Overview
 Analyzed ~9,800 retail sales records to evaluate performance across regions, products, and time. The core deliverable is a Tableau dashboard built on SQL-aggregated data. R was used to generate supplementary model outputs and forecast CSVs that feed into the visualizations, but the modeling component is exploratory rather than production-grade.
 
+![Dashboard Overview](images/Dashboard_1080p_.png)
+
 ## Tools
 SQL, R, Tableau
 
@@ -24,6 +26,8 @@ The R modeling layer is relatively thin — a lagged regression rather than a pr
 - Evaluated against a naive lag-1 baseline using MAE, RMSE, and MAPE
 - Developed Tableau dashboards to visualize trends, seasonality, product performance, and decision outputs
 
+![Monthly Revenue with Rolling Average and Forecast](images/Sheet_1.png)
+
 ## Model Performance (Honest Assessment)
 | Model | MAE | RMSE | MAPE |
 |---|---|---|---|
@@ -39,6 +43,10 @@ The regression model does beat the naive baseline, which is the minimum bar. How
 - Fasteners (~$3K) and Labels had negligible contribution across the entire period
 - Revenue shows clear seasonality with peaks in September and November; January and February are consistently soft
 
+![Seasonal Revenue Deviations from Trend](images/Sheet_3.png)
+
+![Product Underperformance Heatmap](images/Sheet_2.png)
+
 ## Business Decisions (From Residual Classification)
 These are derived from model residuals and relative performance — directionally useful but should be treated as conversation starters, not hard recommendations given the model's error rate.
 
@@ -46,6 +54,10 @@ These are derived from model residuals and relative performance — directionall
 - **Monitor**: East region; Machines, Copiers, Binders (moderate revenue, high volatility)
 - **Fix**: South and Central regions
 - **Cut / Rework**: Bookcases, Appliances, Furnishings, Paper (low residuals, low share)
+
+![Risk/Reward Scatter Plot](images/Sheet_5.png)
+
+![Retail Sales Strategy: Invest vs Reduce](images/Sheet_4.png)
 
 ## Limitations
 - The regression model uses only lag features — no external variables, no seasonality terms, no proper train/test split across time
