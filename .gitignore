@@ -1,0 +1,15 @@
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Mac
+.DS_Store
+
+# Database
+*.db
+
+# Outputs
+*.rds
+*.Rds
+*.log
