@@ -1,1 +1,7 @@
+# Ignore non-code files
 *.R linguist-vendored
+*.csv linguist-vendored
+*.txt linguist-vendored
+
+# Force SQL detection
+*.sql linguist-language=SQL
